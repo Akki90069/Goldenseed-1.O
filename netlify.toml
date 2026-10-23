@@ -9,7 +9,7 @@
   package = "@netlify/plugin-sitemap"
 
   [plugins.inputs]
-    baseUrl = "https://your-custom-name.netlify.app"
+    baseUrl = "https://risetogether.netlify.app"
 [[plugins]]
   package = "netlify-plugin-inline-critical-css"
 [[plugins]]
