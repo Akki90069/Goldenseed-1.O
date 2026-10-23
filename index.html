@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  
+  <!-- Primary Meta Tags -->
+  <title>RISETOGETHER – Goldenroot Successors AI Portal</title>
+  <meta name="title" content="RISETOGETHER – Goldenroot Successors AI Portal">
+  <meta name="description" content="Connect with our AI-powered assistant and advisory platform by Goldenroot Successors to streamline goals, plan securely, and grow together.">
+  <meta name="keywords" content="Goldenroot Successors, RISETOGETHER, AI Agent, Financial Advisory, Tata AIA Partner">
+  <meta name="author" content="Goldenroot Successors">
+
+  <!-- Open Graph / Facebook / WhatsApp Preview Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://risetogether.netlify.app/">
+  <meta property="og:title" content="RISETOGETHER – Goldenroot Successors AI Portal">
+  <meta property="og:description" content="Streamline your goals and connect with Goldenroot Successors through our smart AI assistant.">
+  <meta property="og:image" content="https://risetogether.netlify.app/risetogether-banner.png">
+
+  <!-- Fonts & Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;800&family=Noto+Sans+Devanagari:wght@400;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  
+  <style>
+    :root{--bg:#050b24;--card:#0c1740;--ink:#f4ecd2;--sea:#b4c0ff;--gold:#ffd45a;--line:#26397a;--ok:#6fe0a4;--bad:#ff8a80;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+    body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Source Sans 3","Noto Sans Devanagari",system-ui,sans-serif}
+    main{max-width:600px;margin:0 auto;padding:18px 16px 40px}
+    h1,h2{font-family:Fraunces,"Noto Sans Devanagari",Georgia,serif;line-height:1.2;margin:.3em 0 .4em}
+    h1{font-size:32px;font-weight:800;letter-spacing:.04em;color:var(--gold);text-shadow:0 0 20px rgba(255,201,60,.35)}
+    h2{font-size:22px;text-shadow:0 0 20px rgba(255,201,60,.35)}
+    .brand{font-weight:600;color:var(--gold);font-size:13px;letter-spacing:1px;text-transform:uppercase}
+    .sub{font-size:18px}
+    .bar{height:6px;background:var(--line);border-radius:3px;margin:12px 0 18px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ffb300,#ffe38f);box-shadow:0 0 10px rgba(255,201,60,.6);border-radius:3px}
+    .tag{display:inline-block;font-size:13px;font-weight:600;color:var(--sea);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-bottom:10px}
+    
+    /* AI Pathway Guide Box with Voice Button */
+    .ai-guide-box{display:flex;align-items:center;gap:12px;background:linear-gradient(135deg,#0c1740,#142468);border:1px solid var(--gold);border-radius:16px;padding:14px;margin-bottom:18px;box-shadow:0 0 25px rgba(255,201,60,.2);position:relative}
+    .ai-avatar{width:60px;height:60px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#ffd45a,#d49811);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;box-shadow:0 0 15px rgba(255,201,60,.5);animation:glowAvatar 3s ease-in-out infinite}
+    @keyframes glowAvatar{0%,100%{box-shadow:0 0 15px rgba(255,201,60,.4)}50%{box-shadow:0 0 25px rgba(255,201,60,.8)}}
+    .ai-speech{font-size:15px;line-height:1.4;color:var(--ink);flex:1}
+    .voice-btn{background:none;border:1px solid var(--gold);border-radius:50%;width:38px;height:38px;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;padding:0;color:var(--gold);transition:transform 0.2s}
+    .voice-btn:hover{transform:scale(1.1)}
+
+    /* Equal height visualizer bars */
+    .audio-viz{display:flex;align-items:center;gap:3px;height:16px;margin-top:6px}
+    .audio-viz i{display:block;width:3px;height:100%;background:var(--gold);border-radius:2px;animation:viz 1s ease-in-out infinite alternate;transform-origin:bottom}
+    .audio-viz i:nth-child(2){animation-delay:0.2s}.audio-viz i:nth-child(3){animation-delay:0.4s}.audio-viz i:nth-child(4){animation-delay:0.1s}
+    @keyframes viz{0%{transform:scaleY(0.2)}100%{transform:scaleY(1)}}
+
+    .opts{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+    button,input,select{font:inherit;color:var(--ink)}
+    button{background:var(--card);border:2px solid var(--line);border-radius:12px;padding:12px 14px;text-align:left;cursor:pointer;transition:border-color .2s}
+    button:hover{border-color:var(--sea)}
+    button.go{background:linear-gradient(135deg,#ffe38f,#ffb300);border-color:#ffd45a;color:#1a1200;font-weight:600;text-align:center;margin:8px 0;width:100%}
+    .langs{display:grid;grid-template-columns:1fr 1fr;gap:8px}.langs button{text-align:center;padding:10px 6px}
+    .mirror{background:linear-gradient(160deg,#0f1c4d,#0a1338);border-radius:10px;padding:14px;margin:14px 0;border:1px solid var(--line);box-shadow:0 0 22px rgba(110,90,255,.18)}
+    label{display:block;margin:12px 0 4px;font-weight:600}
+    input,select,textarea{width:100%;box-sizing:border-box;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:10px}
+    .chk{display:flex;gap:10px;align-items:flex-start;font-weight:400}.chk input{width:22px;height:22px;margin-top:3px}
+    .err{color:var(--bad);font-weight:600;min-height:1.2em}
+
+    .irow{display:flex;gap:8px;align-items:center}
+    .mic{width:46px;height:46px;flex-shrink:0;background:var(--card);border:2px solid var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px}
+    .mic.on{border-color:var(--gold);box-shadow:0 
