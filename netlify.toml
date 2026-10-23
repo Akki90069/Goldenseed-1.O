@@ -1,0 +1,16 @@
+# Example: Installing the Algolia Crawler plugin
+[[plugins]]
+  package = "@algolia/netlify-plugin-crawler"
+
+  [plugins.inputs]
+    renderJavaScript = true
+    branches = ['main']
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+
+  [plugins.inputs]
+    baseUrl = "https://your-custom-name.netlify.app"
+[[plugins]]
+  package = "netlify-plugin-inline-critical-css"
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
